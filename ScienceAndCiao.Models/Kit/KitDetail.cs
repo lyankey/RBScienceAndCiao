@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ScienceAndCiao.Data
+namespace ScienceAndCiao.Models.Kit
 {
     public enum Grade
     {
@@ -22,17 +22,23 @@ namespace ScienceAndCiao.Data
         HighSchool
     }
 
-    public class KitDetail : Kit
+    public class KitDetail
     {
-
-        [Key]
-        public int KitDetail_Id { get; set; }
+        [Required]
+        [Index(IsUnique = true)]
+        public int Id { get; set; }
+        [Required]
+        [StringLength(255)]
+        public string Name { get; set; }
+        [Required]
+        public string Branch { get; set; }
+        public double Price { get; set; }
         public string Description { get; set; }
         public string Ingredients { get; set; }
         public int LengthMinutes { get; set; }
         [Required]
         public Grade Grade { get; set; }
-
-
+        public DateTime DateAdded { get; set; }
     }
+
 }

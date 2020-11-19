@@ -54,11 +54,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="KitService.cs" />
+    <Compile Include="MemberService.cs" />
+    <Compile Include="NewRentalsService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ScienceAndCiao.Data\ScienceAndCiao.Data.csproj">
+      <Project>{c06cffe5-66e4-4a71-8373-da764fc100f8}</Project>
+      <Name>ScienceAndCiao.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ScienceAndCiao.Models\ScienceAndCiao.Models.csproj">
+      <Project>{d7fe2cc1-f610-46fc-b73c-c0cdb5164c54}</Project>
+      <Name>ScienceAndCiao.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

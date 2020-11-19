@@ -1,18 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ScienceAndCiao.Data
+namespace ScienceAndCiao.Models.MembershipType
 {
-    public class MembershipType
+    class MembershipTypeListItem
     {
         public byte Id { get; set; }
-
+        [Required]
         public string Name { get; set; }
-        public static readonly byte Unknown = 0;
-        public static readonly byte NoMembership = 1;
-
     }
 }

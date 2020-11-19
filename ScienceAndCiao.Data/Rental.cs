@@ -11,17 +11,21 @@ namespace ScienceAndCiao.Data
     public class Rental
     {
         public int Id { get; set; }
-
         [Required]
-        public Member Member { get; set; }
-
-        [Required]
-        public byte KitId { get; set; }
+        public int KitId { get; set; }
         [ForeignKey(nameof(KitId))]
         public virtual Kit Kit { get; set; }
 
-        public DateTime DateRented { get; set; }
+        [Required]
+        public int MemberId { get; set; }
+        [ForeignKey(nameof(MemberId))]
+        public virtual Member Member { get; set; }
+        [Required]
+        public DateTime StartDate { get; set; }
 
-        public DateTime? DateReturned { get; set; }
+        [Required]
+        public DateTime EndDate { get; set; }
+        public List<int> KitIds { get; set; }
+
     }
 }

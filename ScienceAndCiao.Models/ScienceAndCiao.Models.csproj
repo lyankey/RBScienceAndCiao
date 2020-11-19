@@ -54,8 +54,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MajorityAge.cs" />
+    <Compile Include="Admin\RoleName.cs" />
+    <Compile Include="Branch\BranchCreate.cs" />
+    <Compile Include="Branch\BranchEdit.cs" />
+    <Compile Include="Branch\BranchListItem.cs" />
+    <Compile Include="Kit\KitCreate.cs" />
+    <Compile Include="Kit\KitDetail.cs" />
+    <Compile Include="Kit\KitEdit.cs" />
+    <Compile Include="Kit\KitListItem.cs" />
+    <Compile Include="MembershipType\MembershipTypeCreate.cs" />
+    <Compile Include="MembershipType\MembershipTypeEdit.cs" />
+    <Compile Include="MembershipType\MembershipTypeListItem.cs" />
+    <Compile Include="Member\MemberCreate.cs" />
+    <Compile Include="Member\MemberListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rental\RentalCreate.cs" />
+    <Compile Include="Rental\RentalDetail.cs" />
+    <Compile Include="Rental\RentalEdit.cs" />
+    <Compile Include="Rental\RentalListItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -65,10 +81,6 @@
     <ProjectReference Include="..\ScienceAndCiao.Data\ScienceAndCiao.Data.csproj">
       <Project>{c06cffe5-66e4-4a71-8373-da764fc100f8}</Project>
       <Name>ScienceAndCiao.Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ScienceAndCiao.Services\ScienceAndCiao.Services.csproj">
-      <Project>{98222066-4821-43c8-b131-c2b77fdf4c71}</Project>
-      <Name>ScienceAndCiao.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

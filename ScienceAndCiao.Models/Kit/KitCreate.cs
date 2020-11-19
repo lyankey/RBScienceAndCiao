@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ScienceAndCiao.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -6,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ScienceAndCiao.Data
+namespace ScienceAndCiao.Models.Kit
 {
-    public class Kit
+    public class KitCreate
     {
         [Required]
         [Index(IsUnique = true)]
@@ -16,19 +17,15 @@ namespace ScienceAndCiao.Data
         [Required]
         [StringLength(255)]
         public string Name { get; set; }
+        [Required]
+        public string Branch { get; set; }
         public double Price { get; set; }
         public string Description { get; set; }
         public string Ingredients { get; set; }
         public int LengthMinutes { get; set; }
-
         [Required]
-        public byte BranchId { get; set; }
-        [ForeignKey(nameof(BranchId))]
-        public virtual Branch Branch { get; set; }
-        [Range(1, 2000)]
+        public Grade Grade { get; set; }
         public DateTime DateAdded { get; set; }
     }
+}
 
-        
-
-    }

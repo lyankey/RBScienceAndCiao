@@ -34,7 +34,6 @@ namespace ScienceAndCiaoWebMVC.Data
         }
         public DbSet<Member> Members { get; set; }
         public DbSet<Kit> Kits { get; set; }
-        public DbSet<KitDetail> KitDetails { get; set; }
         public DbSet<MembershipType> MembershipTypes { get; set; }
         public DbSet<Branch> Branches { get; set; }
         public DbSet<Rental> Rentals { get; set; }

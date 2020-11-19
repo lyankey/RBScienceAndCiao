@@ -57,7 +57,7 @@
     <Compile Include="Branch.cs" />
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Kit.cs" />
-    <Compile Include="KitDetail.cs" />
+    <Compile Include="MajorityAge.cs" />
     <Compile Include="Member.cs" />
     <Compile Include="MembershipType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

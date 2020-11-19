@@ -1,0 +1,13 @@
+﻿@model ScienceAndCiao.Models.Kit.KitDetail
+
+@{ ViewBag.Title = Model.Name;
+    Layout = "~/Views/Shared/_Layout.cshtml"; }
+
+<h2>@Model.Name</h2>
+<ul>
+    <li>Branch: @Model.Branch</li>
+    <li>Date Added: @Model.DateAdded.ToLongDateString()</li>
+    <li>Grade: @Model.Grade</li>
+
+</ul>
+

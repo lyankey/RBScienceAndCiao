@@ -1,0 +1,36 @@
+﻿@model IEnumerable<ScienceAndCiao.Models.Kit.KitListItem>
+@{ ViewBag.Title = "Kits";
+                Layout = "~/Views/Shared/_Layout.cshtml"; }
+
+<h2>Kits</h2>
+
+<table id="kits" class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Kit</th>
+            <th>Branch</th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+@section scripts
+{
+    <script>$(document).ready(function () {
+            var table = $("#kits").DataTable({
+                ajax: {
+                    url: "/api/kits",
+                    dataSrc: ""
+                },
+                columns: [
+                    {
+                        data: "name"
+                    },
+                    {
+                        data: "branch.name"
+                    }
+                ]
+            });
+        });</script>
+}
+

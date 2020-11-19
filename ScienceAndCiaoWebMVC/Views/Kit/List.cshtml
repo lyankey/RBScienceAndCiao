@@ -1,0 +1,65 @@
+﻿@model IEnumerable<ScienceAndCiao.Models.Kit.KitListItem>
+
+@{ ViewBag.Title = "Kits";
+                Layout = "~/Views/Shared/_Layout.cshtml"; }
+
+<h2>Kits</h2>
+<p>
+    @Html.ActionLink("New Kit", "New", "Kits", null, new { @class = "btn btn-primary" })
+</p>
+<table id="kits" class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Kit</th>
+            <th>Branch</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+@section scripts
+{
+    <script>$(document).ready(function () {
+            var table = $("#kits").DataTable({
+                ajax: {
+                    url: "/api/kits",
+                    dataSrc: ""
+                },
+                columns: [
+                    {
+                        data: "name",
+                        render: function(data, type, kit) {
+                            return "<a href='/kits/edit/" + kit.id + "'>" + kit.name + "</a>";
+                        }
+                    },
+                    {
+                        data: "branch.name"
+                    },
+                    {
+                        data: "id",
+                        render: function(data) {
+                            return "<button class='btn-link js-delete' data-kit-id=" + data + ">Delete</button>";
+                        }
+                    }
+                ]
+            });
+
+
+            $("#kits").on("click", ".js-delete", function () {
+                var button = $(this);
+
+                bootbox.confirm("Are you sure you want to delete this kit?", function (result) {
+                    if (result) {
+                        $.ajax({
+                            url: "/api/kits/" + button.attr("data-kit-id"),
+                            method: "DELETE",
+                            success: function () {
+                                table.row(button.parents("tr")).remove().draw();
+                            }
+                        });
+                    }
+                });
+            });
+        });</script>
+}
